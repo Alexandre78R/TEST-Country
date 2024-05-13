@@ -1,0 +1,46 @@
+.form-container {
+    border: 1px solid black;
+    width: 60%;
+    margin: 0 auto; 
+    margin-top: 1%;
+    padding: 20px;
+}
+
+.AddCountry-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.AddCountry-form input {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.add-button {
+    background-color: #e41553;
+    color: white;
+    border: none;
+    padding: 1px 2px;
+    cursor: pointer;
+    margin-left: 2%;
+    border-radius: 10%;
+    padding: 10px 15px;
+}
+
+@media (min-width: 768px) {
+    .AddCountry-form {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .AddCountry-form input {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .add-button {
+        padding: 10px 15px;
+        border-radius: 10%;
+    }
+}

@@ -4,6 +4,7 @@ import "@/components/Header/header.css";
 import "@/components/Country/country.css";
 import "@/components/listCountries/listCountries.css";
 import "@/pages/ViewCountry/viewCountry.css";
+import "@/components/AddCountry/addCountry.css";
 
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
