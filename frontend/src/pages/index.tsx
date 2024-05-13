@@ -1,3 +1,9 @@
+import Header from "@/components/Header/Header";
+
 export default function Home() {
-  return <h1>Hello, wilder !</h1>;
+  return (
+    <main>
+      <Header />
+    </main>
+  );
 }

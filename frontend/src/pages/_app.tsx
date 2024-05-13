@@ -1,4 +1,6 @@
 import "@/styles/globals.css";
+import "@/styles/reset.css";
+import "@/components/Header/header.css";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 

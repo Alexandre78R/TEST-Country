@@ -1,0 +1,16 @@
+.header {
+    background-color: #e41553;
+    text-align: center;
+    padding: 15px;
+}
+
+.header h1 {
+    color: white;
+    margin-bottom : 10PX; 
+    font-weight: bold; 
+}
+
+.header .link {
+    color: white;
+    text-decoration: none; 
+}
