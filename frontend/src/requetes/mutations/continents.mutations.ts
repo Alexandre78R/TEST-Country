@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const CONTINENTS = gql`
-  query continents {
-    continents {
+export const ADDCONTINENT = gql`
+  mutation addContinent ($data: NewContinentInput!) {
+    addContinent(data: $data) {
       name
       id
     }

@@ -73,12 +73,100 @@ export type QueryCountryArgs = {
   code: Scalars['String'];
 };
 
+export type AddContinentMutationVariables = Exact<{
+  data: NewContinentInput;
+}>;
+
+
+export type AddContinentMutation = { __typename?: 'Mutation', addContinent: { __typename?: 'Continent', name: string, id: number } };
+
+export type AddCountryMutationVariables = Exact<{
+  data: NewCountryInput;
+}>;
+
+
+export type AddCountryMutation = { __typename?: 'Mutation', addCountry: { __typename?: 'Country', name: string, id: number, emoji: string, code: string, continent?: { __typename?: 'Continent', id: number, name: string } | null } };
+
 export type ContinentsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type ContinentsQuery = { __typename?: 'Query', continents: Array<{ __typename?: 'Continent', name: string, id: number }> };
 
 
+export const AddContinentDocument = gql`
+    mutation addContinent($data: NewContinentInput!) {
+  addContinent(data: $data) {
+    name
+    id
+  }
+}
+    `;
+export type AddContinentMutationFn = Apollo.MutationFunction<AddContinentMutation, AddContinentMutationVariables>;
+
+/**
+ * __useAddContinentMutation__
+ *
+ * To run a mutation, you first call `useAddContinentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddContinentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addContinentMutation, { data, loading, error }] = useAddContinentMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useAddContinentMutation(baseOptions?: Apollo.MutationHookOptions<AddContinentMutation, AddContinentMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddContinentMutation, AddContinentMutationVariables>(AddContinentDocument, options);
+      }
+export type AddContinentMutationHookResult = ReturnType<typeof useAddContinentMutation>;
+export type AddContinentMutationResult = Apollo.MutationResult<AddContinentMutation>;
+export type AddContinentMutationOptions = Apollo.BaseMutationOptions<AddContinentMutation, AddContinentMutationVariables>;
+export const AddCountryDocument = gql`
+    mutation addCountry($data: NewCountryInput!) {
+  addCountry(data: $data) {
+    name
+    id
+    emoji
+    code
+    continent {
+      id
+      name
+    }
+  }
+}
+    `;
+export type AddCountryMutationFn = Apollo.MutationFunction<AddCountryMutation, AddCountryMutationVariables>;
+
+/**
+ * __useAddCountryMutation__
+ *
+ * To run a mutation, you first call `useAddCountryMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddCountryMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addCountryMutation, { data, loading, error }] = useAddCountryMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useAddCountryMutation(baseOptions?: Apollo.MutationHookOptions<AddCountryMutation, AddCountryMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddCountryMutation, AddCountryMutationVariables>(AddCountryDocument, options);
+      }
+export type AddCountryMutationHookResult = ReturnType<typeof useAddCountryMutation>;
+export type AddCountryMutationResult = Apollo.MutationResult<AddCountryMutation>;
+export type AddCountryMutationOptions = Apollo.BaseMutationOptions<AddCountryMutation, AddCountryMutationVariables>;
 export const ContinentsDocument = gql`
     query continents {
   continents {
