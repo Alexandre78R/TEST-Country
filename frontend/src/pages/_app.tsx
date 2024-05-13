@@ -14,11 +14,7 @@ const client = new ApolloClient({
     // watchQuery: { fetchPolicy: "no-cache", nextFetchPolicy: "no-cache" },
   // },
 });
-interface ComponentWithTitle extends AppProps {
-  Component: NextComponentType<NextPageContext, any, any> & {
-    title?: string;
-  };
-}
+
 
 function App({ Component, pageProps }: AppProps) {
   return (
