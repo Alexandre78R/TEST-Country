@@ -1,8 +1,13 @@
 
+import Link from "next/link";
+
 type Props = {
     country: {
         code: string,
-        continent?: [],
+        continent?: {
+            name: string,
+            id:number
+        } | null,
         emoji: string,
         id: number,
         name: string,
@@ -11,9 +16,11 @@ type Props = {
 
 export default function Country ({ country } : Props) {
     return (
-        <div className="country">
+        <Link href={`/ViewCountry/${country.code}`} className="country">
             <p>{country.name}</p>
-            <p>{country.emoji}</p>
-        </div>
+            <span role="img" aria-label="Flag">
+                {country.emoji}
+            </span>
+        </Link>
     );
 }

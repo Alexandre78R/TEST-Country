@@ -3,16 +3,16 @@ import "@/styles/reset.css";
 import "@/components/Header/header.css";
 import "@/components/Country/country.css";
 import "@/components/listCountries/listCountries.css";
+import "@/pages/ViewCountry/viewCountry.css";
+
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import Header from "@/components/Header/Header";
 
 const client = new ApolloClient({
   uri: "http://localhost:4010",
   cache: new InMemoryCache({ addTypename: false }),
-  // defaultOptions: {
-    // watchQuery: { fetchPolicy: "no-cache", nextFetchPolicy: "no-cache" },
-  // },
 });
 
 
@@ -20,6 +20,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
   <>
     <ApolloProvider client={client}>
+      <Header />
       <Component {...pageProps} />
     </ApolloProvider>
   </>

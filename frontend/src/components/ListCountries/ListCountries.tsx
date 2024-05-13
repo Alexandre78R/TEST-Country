@@ -1,6 +1,6 @@
 import Country from "../Country/Country";
 import { useEffect } from "react";
-import { useCountriesQuery, CountriesDocument } from "@/graphql/generated/schema";
+import { useCountriesQuery } from "@/graphql/generated/schema";
 
 export default function ListCountries() {
   const { data } = useCountriesQuery({
